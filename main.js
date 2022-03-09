@@ -5,17 +5,13 @@ let age = prompt("Inserire età del passeggero");
 if (!isNaN(km) && !isNaN(age)) {
 
     // Se l'età è minore di zero o maggiore di 120 do errore
-    if (age < 0 || age > 120) {
-        alert('Età inserita non corretta')
-    } 
-    else {
+    if ( Math.sign(age) == 1 && age < 120 ) {
 
         let priceKm = 0.21;
         let priceTicket;
 
         // Condizione se è minorenne
         if (age < 18) {
-
             // Prezzo ticket con 20% di sconto
             priceKm -= (priceKm * 0.2);
             priceTicket = priceKm * km;
@@ -36,9 +32,13 @@ if (!isNaN(km) && !isNaN(age)) {
         document.getElementById('chilometri').innerHTML = km + " Km";
         document.getElementById('eta').innerHTML = age + " anni";
         document.getElementById('prezzo').innerHTML = priceTicket.toFixed(2) + "&#8364;";
+    } 
+    else{
+        alert('Età inserita non corretta')
     }
 
 } 
 else {
     alert('Non sono stati inseriti numeri')
 }
+
