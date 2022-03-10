@@ -1,5 +1,5 @@
-let km = prompt("Inserire km da percorrere");
-let age = prompt("Inserire età del passeggero");
+let km = Number(prompt("Inserire km da percorrere"));
+let age = Number(prompt("Inserire età del passeggero"));
 
 // Controllo se i dati immessi sono numeri
 if (!isNaN(km) && !isNaN(age)) {
@@ -31,7 +31,8 @@ if (!isNaN(km) && !isNaN(age)) {
         // Stampo a video l'età, i km e il prezzo del ticket
         document.getElementById('chilometri').innerHTML = km + " Km";
         document.getElementById('eta').innerHTML = age + " anni";
-        document.getElementById('prezzo').innerHTML = priceTicket.toFixed(2) + "&#8364;";
+        // document.getElementById('prezzo').innerHTML = priceTicket.toFixed(2) + "&#8364;";
+        document.getElementById('prezzo').innerHTML = `${priceTicket.toFixed(2)} &#8364;`;
     } 
     else{
         alert('Età inserita non corretta')
